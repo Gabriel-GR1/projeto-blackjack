@@ -22,3 +22,23 @@ projeto-21/
 ├── docs/
 │ └── relatorio.pdf
 └── README.md
+
+## 📡 Protocolo de Comunicação
+
+As mensagens trocadas entre cliente e servidor seguem um protocolo textual simples via sockets UDP. Os comandos são:
+
+- `ENTRAR:<nome>` → Enviado pelo cliente para entrar no jogo.
+- `CARTA:<valor>` → Enviado pelo servidor para informar uma nova carta ao cliente.
+- `PEDIR_CARTA` → Enviado pelo cliente para pedir uma nova carta.
+- `PARAR` → Enviado pelo cliente quando decidir parar.
+- `RESULTADO:<ganhou/perdeu>` → Enviado pelo servidor com o resultado final.
+- `MENSAGEM:<texto>` → Mensagens gerais do servidor para o cliente.
+
+### Exemplo de Conversa
+ENTRAR: Gabriel (cliente)
+CARTA:9 (servidor)
+PEDIR_CARTA (cliente)
+CARTA:10 (servidor)
+PARAR (cliente)
+RESULTADO:ganhou (servidor)
+MENSAGEM:Jogador João perdeu por ultrapassar 21 (servidor)
