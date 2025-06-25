@@ -35,10 +35,10 @@ As mensagens trocadas entre cliente e servidor seguem um protocolo textual simpl
 - `MENSAGEM:<texto>` → Mensagens gerais do servidor para o cliente.
 
 ### Exemplo de Conversa
-1. ENTRAR: Gabriel (cliente)
-2. CARTA:9 (servidor)
-3. PEDIR_CARTA (cliente)
-4. CARTA:10 (servidor)
-5. PARAR (cliente)
-6. RESULTADO:ganhou (servidor)
-7. MENSAGEM:Jogador João perdeu por ultrapassar 21 (servidor)
+1. ***ENTRAR:*** Gabriel (cliente)
+2. ***CARTA:*** 9 (servidor)
+3. ***PEDIR_CARTA*** (cliente)
+4. ***CARTA:*** 10 (servidor)
+5. ***PARAR*** (cliente)
+6. ***RESULTADO:*** Ganhou! (servidor)
+7. ***MENSAGEM:*** Jogador João perdeu por ultrapassar 21! (servidor)
