@@ -1,20 +1,17 @@
 import socket
 
-# Configurações
+
 IP_SERVIDOR = '127.0.0.1'
 PORTA_SERVIDOR = 12345
 ENDERECO_SERVIDOR = (IP_SERVIDOR, PORTA_SERVIDOR)
 
-# Criação do socket UDP
 cliente = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 cliente.settimeout(5)
 
-# Entrada do jogador
 nome = input("Digite seu nome para entrar no jogo: ")
 mensagem_entrada = f"ENTRAR:{nome}"
 cliente.sendto(mensagem_entrada.encode(), ENDERECO_SERVIDOR)
 
-# Espera confirmação do servidor
 try:
     resposta, _ = cliente.recvfrom(1024)
     print(resposta.decode())
