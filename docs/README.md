@@ -4,7 +4,7 @@ Este projeto é um trabalho prático da disciplina de Redes de Computadores. Imp
 ## 👥 Desenvolvedor
 - Gabriel Rodrigo dos Santos Miguel
 
-## Como Jogar?
+## 🎮 Como Jogar?
 Para iniciar, primeiro execute o servidor.py, após isso em um novo terminal para cada jogador (mínimo 2 jogadores), execute o cliente.py e comece a jogar! 
 
 ## 🧠 Objetivo
