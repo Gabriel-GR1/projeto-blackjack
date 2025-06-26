@@ -41,4 +41,3 @@ As mensagens trocadas entre cliente e servidor seguem um protocolo textual simpl
 4. ***CARTA:*** 10 (servidor)
 5. ***PARAR*** (cliente)
 6. ***RESULTADO:*** Ganhou! (servidor)
-7. ***MENSAGEM:*** Jogador João perdeu por ultrapassar 21! (servidor)
