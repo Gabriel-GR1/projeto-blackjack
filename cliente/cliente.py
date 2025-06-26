@@ -1,18 +1,20 @@
 import socket
-import threading
-import time
 
-IP_SERVIDOR = '127.0.0.1' 
+# Configurações
+IP_SERVIDOR = '127.0.0.1'
 PORTA_SERVIDOR = 12345
 ENDERECO_SERVIDOR = (IP_SERVIDOR, PORTA_SERVIDOR)
 
+# Criação do socket UDP
 cliente = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 cliente.settimeout(5)
 
+# Entrada do jogador
 nome = input("Digite seu nome para entrar no jogo: ")
 mensagem_entrada = f"ENTRAR:{nome}"
 cliente.sendto(mensagem_entrada.encode(), ENDERECO_SERVIDOR)
 
+# Espera confirmação do servidor
 try:
     resposta, _ = cliente.recvfrom(1024)
     print(resposta.decode())
@@ -21,18 +23,8 @@ except socket.timeout:
     exit()
 
 pontuacao = 0
-
-def enviar_keepalive():
-    while True:
-        time.sleep(10)
-        try:
-            cliente.sendto("KEEPALIVE".encode(), ENDERECO_SERVIDOR)
-        except:
-            break
-
-threading.Thread(target=enviar_keepalive, daemon=True).start()
-
 jogando = True
+
 while jogando:
     print("\nEscolha uma ação:")
     print("1 - Pedir carta")
@@ -52,7 +44,6 @@ while jogando:
                 valor = int(mensagem.split(":")[1])
                 pontuacao += valor
                 print(f"🟢 Sua pontuação atual: {pontuacao}")
-
             elif mensagem.startswith("RESULTADO:"):
                 print("🏁 Rodada finalizada.")
                 jogando = False
@@ -74,8 +65,8 @@ while jogando:
                     print("🏁 Rodada finalizada.")
                     jogando = False
                     break
-
             except socket.timeout:
                 print("⏳ Esperando os outros jogadores pararem...")
+
     else:
         print("⚠️ Opção inválida. Tente novamente.")
