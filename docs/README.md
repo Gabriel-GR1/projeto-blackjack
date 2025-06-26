@@ -14,14 +14,14 @@ Criar uma aplicação cliente-servidor usando sockets UDP, implementando as regr
 - Execução via terminal (sem interface gráfica)
 
 ## 📁 Estrutura do Projeto
-projeto-21/
-├── cliente/
-│ └── cliente.py
-├── servidor/
-│ └── servidor.py
-├── docs/
-│ └── relatorio.pdf
-└── README.md
+projeto-21/  
+├── cliente/  
+│ └── cliente.py  
+├── servidor/  
+│ └── servidor.py  
+├── docs/  
+│ └── relatorio.pdf  
+└── README.md  
 
 ## 📡 Protocolo de Comunicação
 
