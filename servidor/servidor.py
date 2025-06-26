@@ -1,4 +1,4 @@
-import socket 
+import socket
 import random
 import time
 
@@ -20,7 +20,7 @@ def enviar(endereco, mensagem):
 
 def resetar_jogo():
     global jogadores
-    jogadores = {} 
+    jogadores = {}
 
 while True:
     dados, endereco = servidor.recvfrom(1024)
@@ -37,7 +37,7 @@ while True:
         jogadores[endereco] = {"nome": nome, "pontuacao": 0, "ativo": True}
         enviar(endereco, f"MENSAGEM:Bem-vindo, {nome}! Use PEDIR_CARTA ou PARAR.")
         print(f"[LOG] {nome} entrou no jogo.")
-    
+
     elif mensagem == "PEDIR_CARTA":
         if endereco in jogadores and jogadores[endereco]["ativo"]:
             carta = sortear_carta()
@@ -57,7 +57,6 @@ while True:
             enviar(endereco, "MENSAGEM:Você parou. Aguardando os outros...")
             print(f"[LOG] {jogadores[endereco]['nome']} parou com {jogadores[endereco]['pontuacao']} pontos.")
 
-   
     if len(jogadores) >= 2 and all(not j["ativo"] for j in jogadores.values()):
         print("[LOG] Todos os jogadores finalizaram a rodada.")
         maior = 0
@@ -78,8 +77,7 @@ while True:
         else:
             for e, j in jogadores.items():
                 if j["pontuacao"] > 21:
-                    continue 
-
+                    continue
                 if j["pontuacao"] == maior:
                     if len(vencedores) == 1:
                         enviar(e, "RESULTADO:ganhou")
