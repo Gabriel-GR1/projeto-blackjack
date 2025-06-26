@@ -35,7 +35,7 @@ while True:
             continue
 
         jogadores[endereco] = {"nome": nome, "pontuacao": 0, "ativo": True}
-        enviar(endereco, f"MENSAGEM:Bem-vindo, {nome}! Use PEDIR_CARTA ou PARAR.")
+        enviar(endereco, f"MENSAGEM:Bem-vindo, {nome}! Digite 1 para Pedir carca ou 2 para Parar.")
         print(f"[LOG] {nome} entrou no jogo.")
 
     elif mensagem == "PEDIR_CARTA":
